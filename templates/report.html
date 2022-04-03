@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<title>Patch Report</title>
+<style>
+table,th,
+td {
+border: 1px solid black;
+}
+</style>
+<body bgcolor=#8fbc8f>
+<table>
+<tr>
+<th>Time</th>
+<th>User</th>
+<th>Server</th>
+<th>Status</th>
+</tr>
+{% for reports in report %}
+<tr>
+<td>{{ reports['time']}}</td>
+<td>{{ reports['user'] }}</td>
+<td>{{ reports['server'] }}</td>
+<td>{{ reports['status'] }}</td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</head>
+</html>
