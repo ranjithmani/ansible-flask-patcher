@@ -8,13 +8,15 @@ API based ansible patching implemented using Flask.
 - Authentication and host restriction 
 - Logging 
 - Reporting 
+- API requests are stored in mongodb 
 
 
 ## limitations 
 
 - Only take one server at a time
 - Patching status will not be reported
-- Reporting capabilities are limited 
+- Reporting capabilities are limited
+- TLS not implemented. 
 
 
 ## Usage
