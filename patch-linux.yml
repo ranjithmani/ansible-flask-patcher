@@ -1,0 +1,17 @@
+---
+- hosts: all
+  remote_user: root
+  gather_facts: no
+  tasks:
+  - name: Create a New repo.
+    yum_repository:
+            name: local-rocky-repo
+            description: Rocky Repo
+            baseurl: http://192.10.1.2/pkg
+            gpgcheck: no
+
+  - name: Patch server 
+    yum: name=* update_cache=yes state=latest disablerepo=* enablerepo=local-rocky-repo
+
+  - name: Reboot the server
+    shell: 'sync; shutdown -rf now'
